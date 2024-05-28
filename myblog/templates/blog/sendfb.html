@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send feedback</title>
+    <link rel="stylesheet" href="{%static 'css/sendfb.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">           
+        <div class="logo" onclick="window.location.href = '{% url 'home' %}'">Daily</div>
+        <div class="titles">
+        <div onclick="window.location.href = '{% url 'technews' %}'">Technology</div>
+        <div onclick="window.location.href = '{% url 'financenews' %}'">Finance</div>
+        </div>
+    </div>
+
+    <h1 class="welcome">Send feedback to us</h1>
+
+
+    <div class="form_section">
+        <form  method="POST" class="fb_form">
+            {% csrf_token %}
+
+            <label for="sender" class="labels">Sender:</label>
+            <input type="text" name="sender" class="form_inputs">
+            <br><br>
+
+            <label for="title" class="labels">Title:</label>
+            <input type="text" name="title" class="form_inputs" id="fb_title">
+            <br><br>
+
+            <label for="content" class="labels">Content:</label>
+            <input type="text" name="content" class="form_inputs" id="content">
+            <br><br><br>
+
+            <input type="submit" value="Create" class="create_btn">
+
+        </form>
+        
+        
+    </div>
+
+
+</body>
+
+<footer>
+
+    <a href="{% url 'createnews' %}" class="send_news">Send news</a>
+    
+    <a href="{% url 'home' %}" class="back_home">Back to homepage</a>   
+    
+</footer>
+
+</html>

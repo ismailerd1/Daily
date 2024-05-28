@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: aliceblue;
+    width: 100%;
+    
+}
+.navbar{
+    background-color: aqua;
+    height: 6vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+ 
+}
+.logo{
+    font-size: 3vw;
+    font-weight: bolder;
+    margin-right: auto;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.titles{
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10%;
+    gap: 7vw;
+    font-weight: bold;
+}
+
+.welcome{
+    margin: 3vw;
+    font-size: 3vw;
+    text-align: center;
+    color: black;
+}
+
+
+
+footer{
+    background-color: cyan;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    
+}
+
+.send_fb{
+    margin-left: 3vw;
+    text-decoration: none;
+    color: black;
+}
+
+.back_home{
+    text-decoration: none;
+    color: black;
+}
+
+.send_news{
+    margin-right: 3vw;
+    text-decoration: none;
+    color: black;
+}

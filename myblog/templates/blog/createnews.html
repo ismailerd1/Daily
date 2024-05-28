@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send your news</title>
+    <link rel="stylesheet" href="{%static 'css/createnews.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">           
+        <div class="logo" onclick="window.location.href = '{% url 'home' %}'">Daily</div>
+        <div class="titles">
+        <div onclick="window.location.href = '{% url 'technews' %}'">Technology</div>
+        <div onclick="window.location.href = '{% url 'financenews' %}'">Finance</div>
+        </div>
+    </div>
+
+    <h1 class="welcome">Create your news here</h1>
+
+
+    <div class="form_section">
+        <form  method="POST" enctype="multipart/form-data" class="news_form">
+            {% csrf_token %}
+
+            <label for="sender" class="labels">Sender:</label>
+            <input type="text" name="sender" class="form_inputs">
+            <br><br>
+
+            <label for="source" class="labels" >Source of your news:</label>
+            <input type="text" name="source" class="form_inputs" >
+            <br><br>
+
+            <label for="topic" class="labels" >Choose topic:</label>
+            <input type="checkbox" name="topics" id="topic_tech" value="Technology"> Technology
+            <input type="checkbox" name="topics" id="topic_finance" value="Finance"> Finance
+            <br><br>
+
+
+            <label for="image" class="labels">İmage:</label>
+            <input type="file" name="image" class="form_inputs">
+            <br><br>
+
+            <label for="title" class="labels">Title:</label>
+            <input type="text" name="title" class="form_inputs" id="news_title">
+            <br><br>
+
+            <label for="content" class="labels">Content:</label>
+            <input type="text" name="content" class="form_inputs" id="content" rows="5">
+            <br><br><br>
+
+
+            <input type="submit" value="Create" class="create_btn">
+
+        </form>
+        
+        
+    </div>
+
+
+</body>
+
+<footer>
+
+    <a href="{% url 'sendfb' %}" class="send_fb">Send feedback</a>
+    
+    <a href="{% url 'home' %}" class="back_home">Back to homepage</a>   
+    
+</footer>
+
+</html>

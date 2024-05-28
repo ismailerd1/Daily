@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: aliceblue;
+    
+}
+.navbar{
+    background-color: aqua;
+    height: 6vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+ 
+}
+.logo{
+    font-size: 3vw;
+    font-weight: bolder;
+    margin-right: auto;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.titles{
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10%;
+    gap: 7vw;
+    font-weight: bold;
+}
+
+.welcome{
+    margin: 2vw;
+    font-size: 2vw;
+    text-align: center;
+}
+
+
+.containers{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 6vw;
+}
+
+.news-container{
+    margin-left: 2vw;
+    width: 80vw;
+    
+}
+
+.sidebar-container{
+    margin-right: 2vw;
+    width: 20vw;
+}
+
+.source_news{
+    border: 2px solid black;
+    margin-top: 3vw;
+    
+}
+.subje{
+    background-color: aqua;
+    font-size: 1.5vw;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.subje_list{
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    text-align: center;
+    
+}
+.subje_list a{
+    text-decoration: none;
+    color: black;
+}
+.subje_list a:visited{
+    color: black;
+}
+.sidebar_hrs{
+    border: 1px solid black;
+}
+
+.news-section {
+    display:flex;
+    flex-direction: row;
+    background-color: floralwhite;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70vw;
+    max-height: 15vw;
+}
+
+.news-image {
+    width: 15vw ;
+    max-height: 15rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    margin-right: 1.6rem;
+} 
+
+.news-word{
+    display: flex;
+    flex-direction: column;
+    width: 55vw;
+    max-height: 15rem;
+    text-overflow: ellipsis;
+} 
+
+.news-title {
+    font-size: 1.8vw;
+    font-weight: bold;
+    margin-top: 1vw;
+    max-width: 50vw;
+
+
+} 
+
+.news-content {
+
+    font-size: 1.5vw;
+    padding: 1vw;
+    margin: 1vw;
+    margin-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+    max-width: 70vw;
+    max-height: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+
+  
+.newshrs{
+    width: 70vw;
+}
+
+
+#scrollTopBtn{
+    position: fixed; 
+    bottom: 2vw; 
+    right: 1.7vw; 
+    padding: 0.8vw; 
+    background-color: aqua; 
+    color: white; 
+    border: 0.1rem solid aqua; 
+    border-radius: 1rem; 
+    cursor: pointer; 
+}
+
+
+
+footer{
+    background-color: cyan;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+.send_fb{
+    margin-left: 3vw;
+    text-decoration: none;
+    color: black;
+}
+
+.send_news{
+    margin-right: 3vw;
+    text-decoration: none;
+    color: black;
+}
+

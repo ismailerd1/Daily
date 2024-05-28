@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/news_detail.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">           
+        <div class="logo" onclick="window.location.href = '{% url 'home' %}'">Daily</div>
+        <div class="titles">
+        <div onclick="window.location.href = '{% url 'technews' %}'">Technology</div>
+        <div onclick="window.location.href = '{% url 'financenews' %}'">Finance</div>
+        </div>
+    </div>
+
+    <h1 class="news_title">{{news.title}}</h1>
+    {% if news.image %}
+    <img class="news-image" src="{{ news.image.url }}" alt="News image">
+    {% endif %}
+
+    <div class="news_content">{{news.content}}</div>
+
+    {% if news.source %}
+        <div class="source_sender">source: {{news.source}}</div> 
+    {% elif news.sender %}
+        <div class="source_sender">sender: {{news.sender}}</div>
+    {% endif %}
+    
+    
+    <button id="scrollTopBtn"  style="display: none;">▲</button>
+    
+</body>
+
+<footer>
+
+    <a href="{% url 'sendfb' %}" class="send_fb">Send feedback</a>
+    
+    <a href="{% url 'home' %}" class="back_home">Back to homepage</a> 
+    
+    <a href="{% url 'createnews' %}" class="send_news">Send your news</a>
+    
+</footer>
+</html>
+
+
+
+<script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Sayfa kaydırıldığında çalışacak fonksiyon
+function handleScroll() {
+    if (window.scrollY > 200) {
+        scrollTopBtn.style.display = "block"; // Tuşu göster
+    } else {
+        scrollTopBtn.style.display = "none"; // Tuşu gizle
+    }
+}
+
+// "Yukarı Dön" tuşuna tıklandığında sayfanın en üstüne çık
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Sayfanın üstüne yumuşak kaydırma
+}
+
+// Olay dinleyicilerini ekleyin
+window.addEventListener("scroll", handleScroll); // Sayfa kaydırıldığında handleScroll fonksiyonunu çalıştır
+scrollTopBtn.addEventListener("click", scrollToTop);
+</script>

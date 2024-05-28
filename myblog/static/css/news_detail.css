@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: aliceblue;
+    
+}
+.navbar{
+    background-color: aqua;
+    height: 6vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+ 
+}
+.logo{
+    font-size: 3vw;
+    font-weight: bolder;
+    margin-right: auto;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.titles{
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10%;
+    gap: 7vw;
+    font-weight: bold;
+}
+
+.news_title{
+    font-size: 3vw;
+    font-weight: bolder;
+    color: rgb(179, 17, 17);
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+}
+
+.news-image{
+    float: left;
+    margin-left: 1vw;
+    margin-right: 2.5vw;
+    max-width: 30vw;
+    max-height: 30vw;
+    
+}
+.news_content{
+    font-weight: bold;
+    font-size: 1.8vw;
+    margin-left: 2.5vw;
+    text-indent: 0.8vw;
+}
+
+.source_sender{
+    text-align: end;
+    margin-right: 1.6vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    font-weight: bolder;
+    font-size: 1.4vw;
+    color: brown;
+    
+}
+
+#scrollTopBtn{
+    position: fixed; 
+    bottom: 2vw; 
+    right: 1.7vw; 
+    padding: 0.8vw; 
+    background-color: aqua; 
+    color: white; 
+    border: 0.1rem solid aqua; 
+    border-radius: 1rem; 
+    cursor: pointer; 
+}
+
+footer{
+    background-color: cyan;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    
+}
+
+.send_fb{
+    margin-left: 3vw;
+    text-decoration: none;
+    color: black;
+}
+
+.back_home{
+    text-decoration: none;
+    color: black;
+}
+
+.send_news{
+    margin-right: 3vw;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+

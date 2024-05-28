@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily</title>
+    <link rel="stylesheet" href="{%static 'css/homepage.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">           
+        <div class="logo" onclick="window.location.href = '{% url 'home' %}'">Daily</div>
+        <div class="titles">
+        <div onclick="window.location.href = '{% url 'technews' %}'">Technology</div>
+        <div onclick="window.location.href = '{% url 'financenews' %}'">Finance</div>
+        </div>
+    </div>
+
+    <h1 class="welcome">Welcome! Here are technology news</h1>
+    
+
+    <div class="containers">
+        <div class="news-container">
+            {% for news in sub_news %}
+                <div class="news-section" onclick="window.location.href = '{% url 'newsdetail' news.id %}'">
+                    {% if news.image %}
+                        <img class="news-image" src="{{ news.image.url }}" alt="News image">
+                    {% else %}
+                        <img class="news-image" src="media/news_images/black.jpg" alt="Black">
+                    {% endif %}
+                    <div class="news-word">
+                        <h2 class="news-title">{{ news.title }}</h2>
+                        <p class="news-content">{{ news.content }}</p>
+                    </div>
+                </div>
+                <hr class="newshrs">
+            {% endfor %}
+        
+            <div class="news-section">   
+                <img class="news-image" src="{%static 'img/starbucks.png' %}" alt="Haber Resmi 2">
+                <div class="news-word">
+                <h2 class="news-title">Startbucks have a so big change inside..</h2>
+                <p class="news-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, vitae natus doloribus eum deserunt doloremque et nesciunt id quisquam maiores harum ipsum laudantium praesentium illum unde neque, vel numquam quasi.
+                Blanditiis modi voluptas sapiente laudantium vel nostrum officiis debitis quasi incidunt labore ullam non nesciunt nemo, error deserunt praesentium cum? Quae itaque voluptatibus quo sapiente aspernatur enim odio dignissimos obcaecati!
+                Libero alias labore deleniti modi, accusantium quidem repellendus iure ipsam explicabo! Delectus eum est doloremque quasi alias hic at expedita, tempora suscipit commodi consequatur ea voluptates iste. Consequatur, officiis expedita.
+                Ipsa, dolorem molestias dignissimos, doloribus dolor eligendi eaque assumenda voluptate rerum magni similique alias ab quae ducimus in voluptatibus corporis mollitia. Necessitatibus cumque aliquam facere harum dolorem eveniet quibusdam nulla.
+                Quaerat labore facere dolore minus laudantium velit nobis eligendi quisquam? Tenetur, repellendus quo, fugiat autem perspiciatis delectus distinctio aut, fugit ipsam non earum. Iure adipisci voluptate ratione reiciendis tempore nisi.
+                Optio corrupti tempore sit repellendus consequuntur, odio debitis! Nihil sed enim asperiores sit suscipit quo rerum quis quasi, facilis, id, perferendis inventore eos fugiat et eum? Deserunt culpa repellat modi.
+                Autem cumque fugiat, sapiente aliquid molestias consectetur, omnis laudantium modi nam animi deserunt nobis optio sed! Qui reprehenderit, vel officiis cupiditate soluta quas, doloremque commodi dolor cum tempore cumque iusto.
+                Fugit amet ipsam facilis veritatis provident cumque, deserunt nobis sint odit laborum autem error. Possimus, ad. Omnis alias nam consequuntur iure maiores assumenda, officiis facere quod nisi quidem ratione ad?
+                Sunt eius repellendus consequatur ut sequi aliquid quia non quasi omnis laboriosam reiciendis veniam tenetur nisi qui, aut commodi sed, totam velit dignissimos illum. Autem aliquam ea et temporibus maiores?
+                Quibusdam animi nihil delectus ab possimus quasi alias odio, vitae commodi, amet repellat, soluta officia eligendi voluptatibus porro dolorem hic vero perferendis itaque quam minus assumenda aut? Expedita, quasi accusamus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias suscipit illum veritatis, ducimus vero culpa beatae officia aperiam minus, delectus magnam laborum sequi ipsa fugit neque sit animi illo iste!</p>
+                </div>
+            </div>
+
+
+        
+        </div>
+
+        <div class="sidebar-container">
+            <div class="source_news">
+                <div class="subje">News site we feed on:</div>
+                <hr class="sidebar_hrs">
+                <div class="subje_list">
+                    <hr class="sidebar_hrs">
+                    <a href="https://www.bloomberg.com/middleeast">Bloomberg</a>
+                    <hr class="sidebar_hrs">
+                    <a href="https://edition.cnn.com/">Cnn news</a>
+                    <hr class="sidebar_hrs">
+                    <a href="https://www.bbc.com/">Bbc</a>
+                    <hr class="sidebar_hrs">
+                    <a href="https://techcrunch.com/">Tech crunch</a>
+                    <hr class="sidebar_hrs">
+                    <a href="https://news.ycombinator.com/">Hacker news</a>
+                    <hr class="sidebar_hrs">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <button id="scrollTopBtn"  style="display: none;">▲</button>
+    
+</body>
+
+<footer>
+
+<a href="{% url 'sendfb' %}" class="send_fb">Send feedback</a>
+
+<a href="{% url 'createnews' %}" class="send_news">Send your news</a>
+
+
+
+</footer>
+
+
+
+
+</html>
+
+
+<script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Sayfa kaydırıldığında çalışacak fonksiyon
+function handleScroll() {
+    if (window.scrollY > 200) {
+        scrollTopBtn.style.display = "block"; // Tuşu göster
+    } else {
+        scrollTopBtn.style.display = "none"; // Tuşu gizle
+    }
+}
+
+// "Yukarı Dön" tuşuna tıklandığında sayfanın en üstüne çık
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Sayfanın üstüne yumuşak kaydırma
+}
+
+// Olay dinleyicilerini ekleyin
+window.addEventListener("scroll", handleScroll); // Sayfa kaydırıldığında handleScroll fonksiyonunu çalıştır
+scrollTopBtn.addEventListener("click", scrollToTop);
+</script>

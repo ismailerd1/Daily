@@ -15,7 +15,7 @@ I am thinking of adding news directly to this site on selected news sites with w
     Open your terminal or command prompt and run the following command to clone the repository from GitHub:
 
     ```bash
-    git clone https://github.com/ismailerd1/daily.git
+    git clone https://github.com/ismailerd1/Daily.git
     cd news-website
     ```
 

@@ -63,6 +63,12 @@ I am thinking of adding news directly to this site on selected news sites with w
 	Application should now be running at [http://localhost:8000](http://localhost:8000).
 
 
+## Screenshots
+
+Here is a screenshot of the application:
+
+![Application Screenshot](daily00.png)
+
 
 
 ### CONTACT
